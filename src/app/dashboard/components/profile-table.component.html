@@ -1,0 +1,58 @@
+<div>
+    <div class="filter-bar">
+        <div class="filter-item">
+            <input type="text" placeholder="Search..."/>
+        </div>
+        <div class="filter-item">
+            <div>
+                Country
+                <select [(ngModel)]="country">
+                    <option value=""></option>
+                    <option *ngFor="let country of countries" [value]="country">{{country}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="filter-item">
+            <div>
+                Enabled
+                <select [(ngModel)]="enabled">
+                    <option value=""></option>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
+        </div>
+        <div class="filter-item">
+            <div>
+                Visible
+                <select [(ngModel)]="visible">
+                    <option value=""></option>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Country</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let profile of httpService.getProfiles() | filterarray: enabled: visible: country | paginate: {itemsPerPage: 10, currentPage: currentPage }; let i = index"
+            [class.background-odd]="isRowOdd(i)"
+            [class.background-even]="!isRowOdd(i)"
+            (click)="viewProfile(profile.id)"
+            highlight
+            >
+                <td class="first_column">{{profile.first_name}}</td>
+                <td class="second_column">{{profile.last_name}}</td>
+                <td class="third_column">{{profile.country_name}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+</div>

@@ -1,0 +1,27 @@
+.app{
+    height: 100%;
+    font-family: chronicle ssm a,chronicle ssm b,Georgia,times new roman,Times,serif;
+}
+
+.title-holder{
+    display: flex;
+    height: 200px;
+    .title{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        margin-top: 0.5%;
+        .bof-logo{
+            max-height: 100%;
+            padding: 10px;
+        }
+    }
+}
+
+.content{
+    height: calc(100% - 200px);
+}

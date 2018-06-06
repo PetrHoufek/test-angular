@@ -1,0 +1,46 @@
+<div class="profile-component" *ngIf="profile">
+    <div class="profile-holder">
+        <div class="profile">
+            <h3>Profile</h3>
+            <div class="flex col-12 profile-section">
+                <div class="col-6">
+                    <div class="col-12 property-group">
+                        <div class="col-6">Name</div>
+                        <input  class="col-6" type="text" [(ngModel)]="profile.first_name">
+                    </div>
+                    <div class="col-12 property-group">
+                        <div class="col-6">Surname</div>
+                        <input  class="col-6" type="text" [(ngModel)]="profile.last_name">
+                    </div>
+                    <div class="col-12 no-padding">
+                        <div class="col-6">Nationality</div>
+                        <div class="col-6 no-padding">
+                            <input class="col-12 repeated-item" type="text" *ngFor="let nationality of profile.nationalities" [(ngModel)]="nationality.country_name">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+                    <div class="col-12 property-group">
+                        <div class="col-6">Country</div>
+                        <input  class="col-6" type="text" value="fake">
+                    </div>
+                    <div class="col-12 property-group">
+                        <div class="col-6">Street</div>
+                        <input  class="col-6" type="text" value="fake">
+                    </div>
+                    <div class="col-12 no-padding">
+                        <div class="col-6">ZIP</div>
+                        <input  class="col-6" type="text" value="fake">
+                    </div>
+                </div>
+            </div>
+            <div class="flex col-12 no-padding">
+                <div class="col-12">
+                    <div class="col-12">Summary</div>
+                    <textarea class="col-12" [(ngModel)]="profile.summary"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
