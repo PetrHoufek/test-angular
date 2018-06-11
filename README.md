@@ -1,3 +1,18 @@
+Please follow these installation instructions step by step:
+
+1. npm uninstall -g webpack
+2. npm uninstall -g @angular/cli
+3. npm install -g @angular/cli
+4. git clone https://github.com/PetrHoufek/test-angular.git
+5. cd test-angular
+6. delete package-lock file
+7. npm i --save-dev webpack
+8. npm install
+9. ng serve --open
+
+
+
+
 Angular Developer Test
 ======================
 The Business of Fashion uses various tests to assess whether a candidate is best suited to the expectations of the role advertised and the offer given.
