@@ -10,6 +10,8 @@ Please follow these installation instructions step by step:
 8. npm install
 9. ng serve --open
 
+![alt text](https://github.com/PetrHoufek/test-angular/blob/master/intro1.jpg)
+![alt text](https://github.com/PetrHoufek/test-angular/blob/master/intro2.jpg)
 
 
 
